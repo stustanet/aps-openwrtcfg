@@ -1,0 +1,35 @@
+config system
+	option hostname 'SSN_AP'
+	option zonename 'UTC'
+	option timezone 'GMT0'
+	option conloglevel '8'
+	option cronloglevel '8'
+
+config timeserver 'ntp'
+	list server 'zeit.stusta.mhn.de'
+	list server 'zeit2.stusta.mhn.de'
+
+config led 'led_usb'
+	option name 'USB'
+	option sysfs 'tp-link:green:usb'
+	option trigger 'usbdev'
+	option dev '1-1'
+	option interval '50'
+
+config led 'led_wlan'
+	option name 'WLAN'
+	option sysfs 'tp-link:green:wlan'
+	option trigger 'phy0tpt'
+
+config led 'led_stern'
+	option default '0'
+	option name 'Stern'
+	option sysfs 'tp-link:green:system'
+	option trigger 'none'
+
+config led 'led_pfeile'
+	option default '0'
+	option name 'pfeile'
+	option sysfs 'tp-link:green:wps'
+	option trigger 'none'
+
